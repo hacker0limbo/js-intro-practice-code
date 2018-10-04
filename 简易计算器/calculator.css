@@ -1,0 +1,47 @@
+#main {
+    width:650px;
+    height:270px;
+    margin: 0 auto;
+    background:#2ca0b5;
+}
+
+#main h1 {
+    text-align:center;
+    padding-top:20px;
+}
+
+#main .rule_line {
+    border:solid 1px #ffff00;
+}
+
+#operation {
+    text-align:center;
+    padding:10px 10px 10px 10px;
+}
+
+#main .input_number {
+    padding:20px;
+}
+
+#main .input {
+    width:200px;
+    margin:5px 5px 5px 5px;
+}
+
+.cal {
+    float: right;
+    margin-top:-28px;
+    margin-right:100px;
+}
+
+#clear1 {
+    float: right;
+    margin-top: -91px;
+    margin-right:100px;
+}
+
+#clear2 {
+    float: right;
+    margin-top: -59px;
+    margin-right:100px;
+}

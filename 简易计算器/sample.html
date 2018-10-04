@@ -1,0 +1,108 @@
+
+<!DOCTYPE html>
+<head>
+<meta http-equiv="content-Type" content="text/html" charset="utf-8">
+<title>简单计算器</title>
+<style>
+#main {width:400px; height:280px; margin: 0 auto; background:#2ca0b5;}
+#main h1 {text-align:center;padding-top:20px;}
+#main .rule_line {border:solid 1px #cccccc;}
+#main .opera {text-align:center;padding:10px 10px 10px 10px;}
+#main .input_number {padding:20px;}
+.cal {float:right; margin-top:-62px;margin-right:40px}
+</style>
+</head>
+
+<body>
+	<div id="main">
+		<h1>简单计算器</h1>
+		<div class="rule_line"></div>
+		<div class="opera">
+			<input name="calcul" value="1" type="radio" style="text-align:center;" checked="checked" onClick="clearResult()"> 加法
+			<input name="calcul" value="2" type="radio" style="text-align:center;" onClick="clearResult()"> 减法
+			<input name="calcul" value="3" type="radio" style="text-align:center;" onClick="clearResult()"> 乘法
+			<input name="calcul" value="4" type="radio" style="text-align:center;" onClick="clearResult()"> 除法
+		</div>
+		<div class="input_number">
+			数一： <input name="num_1" type="text" style="width:200px;margin:5px 5px 5px 5px;"><br/>
+			数二： <input name="num_2" type="text" style="width:200px;margin:5px 5px 5px 5px;"><br/>
+			结果： <input name="num_3" type="text" style="width:200px;margin:5px 5px 5px 5px;"><br/>
+			<div class="cal">
+				<input type="button" value="计算" onClick="calculateNum()">
+			</div>
+		</div>
+	</div>
+
+	<script>
+		function calculateNum(){
+			var resultNum = 0;
+			var operaArry = document.getElementsByName("calcul"); // 所有 getElementsByName() 方法返回的是元素的数组，而不是一个元素。
+			var operate = 1;
+			for(var i=0;i<operaArry.length;i++){				// 将得到的所有元素进行遍历, 如果被选中, 就将该元素里面的 value 值赋给一个变量
+				if(operaArry[i].checked == true){
+					operate = operaArry[i].value;
+					break;
+				}
+			}
+
+			var first_num = document.getElementsByName("num_1")[0].value;		// 就算返回的数组里面只有一个元素仍旧是数组, 因此返回该元素仍旧需要
+			var second_num = document.getElementsByName("num_2")[0].value;		// 使用数组[0]进行遍历
+
+			if(!validateNum(first_num)){
+				alert("数一应为数字！");
+				return false;
+			}
+
+			if(!validateNum(second_num)){
+				alert("数二应为数字！");
+				return;
+			}
+
+			first_num = formatNum(first_num);
+			second_num = formatNum(second_num);
+
+			switch(parseInt(operate)){
+				case 1:
+					resultNum = first_num + second_num;
+					break;
+				case 2:
+					resultNum = first_num - second_num;
+					break;
+				case 3:
+					resultNum = first_num * second_num;
+					break;
+				case 4:
+					resultNum = first_num / second_num;
+					break;
+			}
+			document.getElementsByName("num_3")[0].value = resultNum;
+
+		}
+
+		//验证是否是数字
+		function validateNum(num){
+			var reg=/^(\d+)(\.(\d+))?$/;
+			if(isNaN(num) || !reg.test(num)){
+				return false;
+			}
+			return true;
+		}
+
+		//把字符串格式化成数字
+		function formatNum(num){
+			if(num.indexOf('.') >= 0){
+				return parseFloat(num);
+			}else {
+				return parseInt(num);
+			}
+		}
+
+
+		function clearResult(){
+			document.getElementsByName("num_3")[0].value='';
+		}
+
+</script>
+
+</body>
+</html>

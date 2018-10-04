@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>自制计算器</title>
+        <link rel="stylesheet" type="text/css" href="calculator.css">
+        <script src="calculator.js"></script>
+    </head>
+    <body>
+        <div id="main">
+
+            <h1>简易计算器 (Simple Calculator)</h1>
+
+            <div class="rule_line"></div>
+            <!-- 计算方法 -->
+            <div id="operation">
+                <input name="method" value="addition" type="radio" checked="checked"> 加法 (Addition)
+                <input name="method" value="subtraction" type="radio"> 减法 (Subtraction)
+                <input name="method" value="multiplication" type="radio"> 乘法 (Multiplication)
+                <input name="method" value="division" type="radio"> 除法 (Division)
+            </div>
+
+            <!-- 输入数字 -->
+            <div class="input_number">
+                数一 (First Number)： <input name="num_1" type="text" class="input" value=""><br>
+                数二 (Second Number)： <input name="num_2" type="text" class="input" value=""><br>
+                结果 (Final Result)： <input name="num_3" type="text" class="input" value=""><br>
+
+                <div class="cal">
+                    <input type="button" value="计算 Calculate" onclick="calculateResult()">
+                </div>
+
+                <div id="clear1">
+                    <input type="button" value="清除1 Clear1" onclick="clearResult1()">
+                </div>
+
+                <div id="clear2">
+                    <input type="button" value="清除2 Clear2" onclick="clearResult2()">
+                </div>
+
+            </div>
+
+        </div>
+    </body>
+</html>
