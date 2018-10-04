@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Simple Music Player</title>
+        <style media="screen">
+            #main {
+                border-color: black;
+                border-style: solid;
+                width: 530px;
+                height: 220px;
+                background: linear-gradient(to bottom, #74e3ec, #c7ffe2); /*Standard*/
+            }
+            #div-mudic-list {
+                height: 210px;
+                float: right;
+                padding: 0px;
+                border-style: dashed;
+                border-color: blue;
+            }
+            ul {
+                list-style-type: none;
+                padding-left: 0px;
+                font-weight: bold;
+            }
+            li {
+                color: #ff6347;
+                margin-top: 17px;
+                cursor: pointer;
+            }
+        </style>
+        <script src="audio.js" charset="utf-8"></script>
+    </head>
+    <body>
+        <div id="main">
+            <div id="div-mudic-list">
+                <em><strong>Music List</strong></em>
+                <ul id="music-list">
+                    <li id="And then you.mp3">1. And then you.mp3</li>
+                    <li id="除了春天爱情和樱花.mp3">2. 除了春天爱情和樱花.mp3</li>
+                    <li id="fish in the pool.mp3">3. fish in the pool.mp3</li>
+                </ul>
+                <p>点击歌曲名可以切换</p>
+            </div>
+            <div id="music-name">
+                 <h4 id="name">Music Name: And then you.mp3</h4>
+                 <br>
+                <audio id="music" src="And then you.mp3" controls></audio><br/>
+            </div>
+            <br><br>
+            <div id="btns">
+                <button id="btn-play">Play</button>
+                <button id="btn-stop">Pause</button>
+                <button id="btn-replay">Replay</button>
+                <button id="btn-pre">Previous</button>
+                <button id="btn-next">Next</button>
+            </div>
+        </div>
+        <div id="footer">
+            源码请加 qq: 997647204, 欢迎骚扰(逃
+        </div>
+    </body>
+</html>

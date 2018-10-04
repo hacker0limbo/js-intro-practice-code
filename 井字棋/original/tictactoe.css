@@ -1,0 +1,33 @@
+/*created by stephen*/
+
+#main {
+    height: 318px;
+    width: 318px;
+    border-style: solid;
+    border-color: #ff0000;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+#line1 {
+    height: 100px;
+}
+
+#line2 {
+    height: 100px;
+}
+
+#line3 {
+    height: 100px;
+}
+
+.box {
+    float: left;
+    width: 100px;
+    height: 100px;
+    background-color: #dddddd;
+    border-style: solid;
+    border-color: #ffff00;
+    cursor: pointer;
+}
