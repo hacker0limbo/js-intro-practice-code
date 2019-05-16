@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>石头剪刀布游戏</title>
+        <script src="rps.js"></script>
+    </head>
+    <body>
+        <div id="mian">
+
+            <h1>石头剪刀布(Rock Paper Scissors)</h1>
+
+                <!-- 请输入石头/剪刀/布(Please input rock / scissors / paper)：
+                <input id="userChoice" type="text" value=""><br> -->
+
+                <!-- 使用 radio 进行选择避免输入错误 -->
+                石头(rock)<input type="radio" name="userChoice" value="rock">
+                剪刀(scissors)<input type="radio" name="userChoice" value="scissors">
+                布(paper)<input type="radio" name="userChoice" value="paper"><br>
+
+                电脑的选择(Computer choice):
+                <input id="computerChoice" type="text" value="">
+                <input type="button" value="开始(start)" onclick="start()"><br>
+
+                最终结果(Final result):
+                <input id="result" type="text" value=""><br>
+
+        </div>
+    </body>
+</html>
