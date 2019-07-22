@@ -38,6 +38,9 @@ export default class Home extends Component {
     // input 框里获取到用户输入的数据, 并使用 setState 更新数据, 然后 onChangeLink 会将更新数据传递给父组件
     this.setState({
       homeLink: event.target.value,
+    }, () => {
+      // 直接使用 callback 保持数据的同步更新
+      this.props.changeLink(this.state.homeLink)
     })
   }
 
