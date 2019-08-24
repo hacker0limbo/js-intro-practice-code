@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import { increment, decrement } from './actions'
+import User from './components/User'
+import Quote from './components/Quote'
 
 class App extends Component {
 
@@ -15,6 +17,8 @@ class App extends Component {
           <button onClick={() => increment()} className="btn btn-primary mr-2">Increase</button>
           <button onClick={() => decrement()} className="btn btn-danger my-2">Decrease</button>
         </p>
+        <User />
+        <Quote />
       </div> 
     )
   }
